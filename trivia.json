@@ -4,6 +4,13 @@
             "invocationName": "trivia para estudiar",
             "intents": [
                 {
+                    "name": "LaunchRequest",
+                    "slots": [],
+                    "samples": [
+                        "abre trivia para estudiar"
+                    ]
+                },
+                {
                     "name": "AMAZON.CancelIntent",
                     "samples": []
                 },
@@ -26,7 +33,8 @@
                         "Me das a conocer las reglas",
                         "Podrías decirme las reglas",
                         "Cuales son las reglas",
-                        "Dime las reglas"
+                        "Dime las reglas",
+                        "Reglas"
                     ]
                 },
                 {
@@ -40,154 +48,48 @@
                     ]
                 },
                 {
-                    "name": "PlayersQuantityIntent",
-                    "slots": [
-                        {
-                            "name": "cantidadJugadores",
-                            "type": "AMAZON.NUMBER"
-                        }
-                    ],
+                    "name": "QuestionIntent",
+                    "slots": [],
                     "samples": [
-                        "El juego sera de {cantidadJugadores} jugadores",
-                        "La cantidad de jugadores va a ser {cantidadJugadores}",
-                        "Vamos a jugar {cantidadJugadores} jugadores",
-                        "Vamos a ser {cantidadJugadores} jugadores"
+                        "Siguiente",
+                        "Otra pregunta",
+                        "Pregunta"
                     ]
                 },
                 {
-                    "name": "TopicIntent",
-                    "slots": [
-                        {
-                            "name": "materia",
-                            "type": "Subject"
-                        }
-                    ],
-                    "samples": [
-                        "Nuestra materia elegida es {materia}",
-                        "Danos preguntas de {materia}",
-                        "El topico que queremos es {materia}",
-                        "El tema sera {materia}"
-                    ]
-                },
-                {
-                    "name": "QuestionsIntent",
-                    "slots": [],
-                    "samples": []
-                },
-                {
-                    "name": "AnswersIntent",
-                    "slots": [],
-                    "samples": []
-                },
-                {
-                    "name": "ScoreIntent",
-                    "slots": [],
-                    "samples": []
-                },
-                {
-                    "name": "EndGameIntent",
+                    "name": "AnswerIntent",
                     "slots": [],
                     "samples": [
-                        "Hasta aquí llegamos",
-                        "Detente por favor",
-                        "Ya no queremos jugar",
-                        "Termina el juego por favor"
+                        "a",
+                        "b",
+                        "c",
+                        "d",
+                        "Mi respuesta es {letters}"
                     ]
-                },
-                {
-                    "name": "PlayAgainIntent",
-                    "slots": [],
-                    "samples": [
-                        "Vamos a jugar",
-                        "Podríamos jugar otra vez",
-                        "Hora de jugar otra vez",
-                        "Quiero volver a jugar"
-                    ]
-                },
-                {
-                    "name": "AddTopicIntent",
-                    "slots": [],
-                    "samples": [
-                        "Puedes agregar un tema",
-                        "Queremos agregar un tema",
-                        "Agrega un tema",
-                        "Quiero que agregues un tema"
-                    ]
-                },
-                {
-                    "name": "AddQuestionIntent",
-                    "slots": [],
-                    "samples": [
-                        "Quiero que agregues una pregunta",
-                        "Agrega una pregunta",
-                        "Queremos agregar una pregunta",
-                        "Puedes agregar una pregunta"
-                    ]
-                },
-                {
-                    "name": "AddAnswerIntent",
-                    "slots": [],
-                    "samples": [
-                        "Puedes agregar una respuesta",
-                        "Queremos agregar una respuesta",
-                        "Agrega una respuesta",
-                        "Quiero que agregues una respuesta"
-                    ]
-                },
-                {
-                    "name": "TopicControllerIntent",
-                    "slots": [],
-                    "samples": []
-                },
-                {
-                    "name": "CloseTopicIntent",
-                    "slots": [],
-                    "samples": []
                 }
             ],
             "types": [
                 {
-                    "name": "Subject",
+                    "name": "letters",
                     "values": [
                         {
-                            "id": "1",
                             "name": {
-                                "value": "Computación"
+                                "value": "d"
                             }
                         },
                         {
-                            "id": "2",
                             "name": {
-                                "value": "Geometría"
+                                "value": "c"
                             }
                         },
                         {
-                            "id": "3",
                             "name": {
-                                "value": "Biología"
+                                "value": "b"
                             }
                         },
                         {
-                            "id": "4",
                             "name": {
-                                "value": "Matemáticas"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Boolean",
-                    "values": [
-                        {
-                            "id": "0",
-                            "name": {
-                                "value": "No"
-                            }
-                        },
-                        {
-                            "id": "1",
-                            "name": {
-                                "value": "Sí"
+                                "value": "a"
                             }
                         }
                     ]
