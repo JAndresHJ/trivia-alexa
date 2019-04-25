@@ -11,18 +11,6 @@
                     ]
                 },
                 {
-                    "name": "AMAZON.CancelIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.HelpIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.StopIntent",
-                    "samples": []
-                },
-                {
                     "name": "AMAZON.NavigateHomeIntent",
                     "samples": []
                 },
@@ -41,36 +29,135 @@
                     "name": "StartGameIntent",
                     "slots": [],
                     "samples": [
-                        "Juguemos",
+                        "A darle",
+                        "Vamos",
+                        "Empecemos",
+                        "Comienza",
                         "Empieza el juego",
                         "Comienza el juego por favor",
                         "Puedes comenzar el juego"
                     ]
                 },
                 {
+                    "name": "ConfigurePlayersIntent",
+                    "slots": [],
+                    "samples": [
+                        "Estamos listos",
+                        "Estoy listo",
+                        "Vamos",
+                        "Excelente",
+                        "Si",
+                        "Hay que jugar",
+                        "Vamos a jugar",
+                        "Quiero jugar",
+                        "jugar",
+                        "Zaz",
+                        "Listos",
+                        "Sí"
+                    ]
+                },
+                {
+                    "name": "IndividualIntent",
+                    "slots": [],
+                    "samples": [
+                        "solo yo",
+                        "uno solo",
+                        "individual"
+                    ]
+                },
+                {
+                    "name": "PvpIntent",
+                    "slots": [],
+                    "samples": [
+                        "competencia",
+                        "uno versus uno",
+                        "uno contra uno"
+                    ]
+                },
+                {
+                    "name": "MathIntent",
+                    "slots": [],
+                    "samples": [
+                        "matemáticas",
+                        "mate"
+                    ]
+                },
+                {
+                    "name": "BioIntent",
+                    "slots": [],
+                    "samples": [
+                        "biología",
+                        "bio"
+                    ]
+                },
+                {
+                    "name": "GeometryIntent",
+                    "slots": [],
+                    "samples": [
+                        "geometría",
+                        "geo"
+                    ]
+                },
+                {
+                    "name": "ComputingIntent",
+                    "slots": [],
+                    "samples": [
+                        "computación",
+                        "compu"
+                    ]
+                },
+                {
                     "name": "QuestionIntent",
                     "slots": [],
                     "samples": [
-                        "Siguiente",
                         "Otra pregunta",
-                        "Pregunta"
+                        "Siguiente",
+                        "Pregunta",
+                        "Dame una pregunta"
                     ]
                 },
                 {
                     "name": "AnswerIntent",
-                    "slots": [],
+                    "slots": [
+                        {
+                            "name": "Answer",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
                     "samples": [
-                        "a",
-                        "b",
-                        "c",
-                        "d",
-                        "Mi respuesta es {letters}"
+                        "Respuesta {Answer}",
+                        "mi respuesta es {Answer}"
                     ]
                 }
             ],
             "types": [
                 {
-                    "name": "letters",
+                    "name": "Subject",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "geometria"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "computacion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "biologia"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "matematicas"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Answers",
                     "values": [
                         {
                             "name": {
