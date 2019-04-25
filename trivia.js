@@ -33,7 +33,7 @@ let sequence = "";
 let gameType = false; // false individual
 let players = false; //false stands for individual mode, True for pvp mode
 
-const randomPosition = function(length){
+const randomPosition = function (length) {
     return Math.floor(Math.random() * length)
 };
 
@@ -43,90 +43,99 @@ const maths = [
     {
         "question": "¿Cómo se calcula el área de un rectángulo?",
         "answers":
-                {
-                    1: "Multiplicando la base por la altura",
-                    2: "Sumando la base y la altura",
-                    3: "Dividiendo la base y la altura",
-                    4: "Restando la base y la altura"
-                },
+        {
+            1: "Multiplicando la base por la altura",
+            2: "Sumando la base y la altura",
+            3: "Dividiendo la base y la altura",
+            4: "Restando la base y la altura"
+        },
         "correct": 1
     },
     {
-    "question": "¿Qué es la secuencia de Fibonacci?",
-    "answers":
-            {1: "Una secuencia donde el elemento es generado por la suma de los dos anteriores",
+        "question": "¿Qué es la secuencia de Fibonacci?",
+        "answers":
+        {
+            1: "Una secuencia donde el elemento es generado por la suma de los dos anteriores",
             2: "Una suma donde hay un incremento constante",
             3: "Una serie aritmética",
             4: "Una serie donde el elemento es generado por la resta de los dos anteriores"
-            },
-    "correct": 1}
+        },
+        "correct": 1
+    }
 ];
 
 const biology = [
     {
-    "question": "¿Qué es la biología?",
-    "answers":
-            {1: "Una ciencia que estudia las computadoras",
+        "question": "¿Qué es la biología?",
+        "answers":
+        {
+            1: "Una ciencia que estudia las computadoras",
             2: "Es la ciencia que estudia a los seres vivos",
             3: "Es una ciencia que estudia fenómenos naturales",
             4: "Es una ciencia que estudia los minerales"
-            },
-    "correct": 2
+        },
+        "correct": 2
     },
     {
-    "question": "¿Los virus y las bacterias están vivas?",
-    "answers":
-            {1: "Los virus sí, bacterias no",
+        "question": "¿Los virus y las bacterias están vivas?",
+        "answers":
+        {
+            1: "Los virus sí, bacterias no",
             2: "Las bacterias sí, los virus no",
             3: "Ninguno está vivo",
             4: "No sé"
-            },
-    "correct": 3
+        },
+        "correct": 3
     }
 ];
 
 const geometry = [{
     "question": "¿Qué estudia la geometría?",
     "answers":
-            {1: "Los números y su naturaleza",
-            2: "Los cuerpos celestiales",
-            3: "La relación entre los números",
-            4: "Las proporciones y singularidades de distintas figuras en un plano o el espacio"
-            },
-    "correct": 4},
     {
+        1: "Los números y su naturaleza",
+        2: "Los cuerpos celestiales",
+        3: "La relación entre los números",
+        4: "Las proporciones y singularidades de distintas figuras en un plano o el espacio"
+    },
+    "correct": 4
+},
+{
     "question": "¿Cuáles son las características de las rectas?",
     "answers":
-            {1: "Se extienden en una misma dirección y son de una dimensión",
-            2: "Se extienden en dos direcciones y son de dos dimensiones",
-            3: "Se extienden en una dirección y son multidimensionales",
-            4: "No se extienden en ninguna dirección y son unidimensionales"
-            },
-    "correct": 1}
+    {
+        1: "Se extienden en una misma dirección y son de una dimensión",
+        2: "Se extienden en dos direcciones y son de dos dimensiones",
+        3: "Se extienden en una dirección y son multidimensionales",
+        4: "No se extienden en ninguna dirección y son unidimensionales"
+    },
+    "correct": 1
+}
 ];
 
 const computing = [
     {
         "question": "¿Qué es la programación?",
         "answers":
-            {
-                1: "Decirle a una computadora qué hacer a base de un set de instrucciones",
-                2: "Calcular el área de un cuadrado",
-                3: "Arreglar una computadora",
-                4: "Decirle a una computadora qué hacer a base de un set infinito de instrucciones"
-            },
+        {
+            1: "Decirle a una computadora qué hacer a base de un set de instrucciones",
+            2: "Calcular el área de un cuadrado",
+            3: "Arreglar una computadora",
+            4: "Decirle a una computadora qué hacer a base de un set infinito de instrucciones"
+        },
         "correct": 1
     },
     {
         "question": "¿Qué es una variable?",
         "answers":
-            {
-                1: "Una función",
-                2: "Un parámetro",
-                3: "Una manera de etiquetar información con un nombre descriptivo",
-                4: "Un compilador"
-            },
-        "correct": 3}
+        {
+            1: "Una función",
+            2: "Un parámetro",
+            3: "Una manera de etiquetar información con un nombre descriptivo",
+            4: "Un compilador"
+        },
+        "correct": 3
+    }
 ];
 
 // phrases
@@ -162,10 +171,10 @@ const stringCorrectAnswer = [
 
 const stringsConfigurePlayersIntent = {
     speechText: [
-      'De acuerdo, comencemos por configurar el juego.'
+        'De acuerdo, comencemos por configurar el juego.'
     ],
     helpPrompt: [
-      '¿Será individual o 1 contra 1?'
+        '¿Será individual o 1 contra 1?'
     ]
 };
 
@@ -258,14 +267,14 @@ const stringsComputing = {
 
 // intents
 
-const HandlerWithReprompt = function(handlerInput, speechText, helpPrompt){
+const HandlerWithReprompt = function (handlerInput, speechText, helpPrompt) {
     return handlerInput.responseBuilder
-            .speak(speechText + helpPrompt)
-            .reprompt(helpPrompt)
-            .getResponse();
+        .speak(speechText + helpPrompt)
+        .reprompt(helpPrompt)
+        .getResponse();
 };
 
-const HandlerDefault = function(handlerInput, speechText){
+const HandlerDefault = function (handlerInput, speechText) {
     return handlerInput.responseBuilder
         .speak(speechText)
         .getResponse();
@@ -298,20 +307,20 @@ const LaunchRequestHandler = {
 };
 
 const RulesHandler = {
-    canHandle(handlerInput){
+    canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === intentRequest && request.intent.name === rulesIntent;
     },
-    handle(handlerInput){
+    handle(handlerInput) {
         sequence = "B";
         const random = randomPosition(stringsRulesIntent['speechText'].length);
         return HandlerWithReprompt(handlerInput, stringsRulesIntent['speechText'][random], stringsRulesIntent['helpPrompt'][random]);
     }
-    
+
 };
 
 const StartTriviaHandler = {
-    canHandle(handlerInput){
+    canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === intentRequest && request.intent.name === startTriviaIntent
     },
@@ -323,11 +332,11 @@ const StartTriviaHandler = {
 };
 
 const ConfigurePlayersHandler = {
-    canHandle(handlerInput){
+    canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === intentRequest && request.intent.name === configurePlayersIntent && sequence === "B";
     },
-    handle(handlerInput){
+    handle(handlerInput) {
         const random = randomPosition(stringsConfigurePlayersIntent['speechText'].length);
         return HandlerWithReprompt(handlerInput, stringsConfigurePlayersIntent['speechText'][random], stringsConfigurePlayersIntent['helpPrompt'][random]);
     }
@@ -408,61 +417,61 @@ const ComputingHandler = {
 };
 
 const QuestionHandler = {
-    canHandle(handlerInput){
+    canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === intentRequest && request.intent.name === questionIntent;
     },
-    handle(handlerInput){
-        let question = ""; 
+    handle(handlerInput) {
+        let question = "";
         let answers = "";
 
-        try{
-            switch(currentTopic){
+        try {
+            switch (currentTopic) {
                 case 'matematicas':
                     question = maths[currentQuestion]['question'];
-                    for(let [key, value] of Object.entries(maths[currentQuestion]['answers'])){
+                    for (let [key, value] of Object.entries(maths[currentQuestion]['answers'])) {
                         answers += key + " " + value + "...";
                     }
                     break;
                 case 'biologia':
                     question = biology[currentQuestion]['question'];
-                    for(let [key, value] of Object.entries(biology[currentQuestion]['answers'])){
+                    for (let [key, value] of Object.entries(biology[currentQuestion]['answers'])) {
                         answers += key + " " + value + "...";
                     }
                     break;
                 case 'geometria':
                     question = geometry[currentQuestion]['question'];
-                    for(let [key, value] of Object.entries(geometry[currentQuestion]['answers'])){
+                    for (let [key, value] of Object.entries(geometry[currentQuestion]['answers'])) {
                         answers += key + " " + value + "...";
                     }
                     break;
                 default:
                     question = computing[currentQuestion]['question'];
-                    for(let [key, value] of Object.entries(computing[currentQuestion]['answers'])){
+                    for (let [key, value] of Object.entries(computing[currentQuestion]['answers'])) {
                         answers += key + " " + value + "...";
                     }
-                    break;            
+                    break;
             }
-            question += "..."; 
+            question += "...";
             return HandlerWithReprompt(handlerInput, question + answers, stringsAnswer[randomPosition(stringsAnswer.length)]);
-        }catch(err){
+        } catch (err) {
             const random = randomPosition(stringsEndGame['speechText'].length);
             return HandlerWithReprompt(handlerInput, stringsEndGame["speechText"][random], stringsEndGame["helpPrompt"][random] + score[0]);
         }
-        
+
     }
 };
 
 const AnswerHandler = {
-    canHandle(handlerInput){
+    canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === intentRequest && request.intent.name === answersIntent;
     },
-    handle(handlerInput){
+    handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         const answerUser = request.intent.slots.Answer.value;
         let answer = "";
-        switch(currentTopic){
+        switch (currentTopic) {
             case 'matematicas':
                 answer = maths[currentQuestion]['correct'];
                 break;
@@ -474,9 +483,9 @@ const AnswerHandler = {
                 break;
             default:
                 answer = computing[currentQuestion]['correct'];
-                break;            
+                break;
         }
-        if(answerUser === answer){
+        if (answerUser === answer) {
             score[0]++;
         }
         currentQuestion++;
@@ -499,7 +508,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         ComputingHandler,
         QuestionHandler,
         AnswerHandler
-    ) 
+    )
     .addErrorHandlers(
         ErrorHandler)
     .lambda();
